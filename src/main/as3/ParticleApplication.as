@@ -76,7 +76,7 @@ package
 			// FWI optimization: always reuse the same Shape object!
 			shape = new Shape();
 			// FWI: transform on drawing, not on blitting into the bitmap:
-			shape.transform.matrix = new Matrix( 1, 0, 0, 1, WIDTH >> 1, HEIGHT >> 1 );
+			//shape.transform.matrix = new Matrix( 1, 0, 0, 1, WIDTH >> 1, HEIGHT >> 1 );
 			addEventListener( Event.ENTER_FRAME, onEnterFrame );
 			
 			addChild( new FPS() );

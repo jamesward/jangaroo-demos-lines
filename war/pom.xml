@@ -35,8 +35,33 @@
 						<version>4.1.0.16076</version>
 						<type>pom</type>
 					</dependency>
+					<dependency>
+						<groupId>com.adobe.flex.framework</groupId>
+						<artifactId>flex-framework</artifactId>
+						<version>4.1.0.16076</version>
+						<type>pom</type>
+					</dependency>
 				</dependencies>
 			</plugin>
+			<plugin>
+				<groupId>net.jangaroo</groupId>
+				<artifactId>jangaroo-lifecycle</artifactId>
+				<version>${jangaroo_version}</version>
+				<extensions>true</extensions>
+			</plugin>
+			<plugin>
+				<groupId>net.jangaroo</groupId>
+				<artifactId>jangaroo-maven-plugin</artifactId>
+				<version>${jangaroo_version}</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>war-package</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-war-plugin</artifactId>
@@ -49,12 +74,6 @@
 	</build>
 
 	<dependencies>
-		<dependency>
-			<groupId>com.adobe.flex.framework</groupId>
-			<artifactId>flex-framework</artifactId>
-			<version>4.1.0.16076</version>
-			<type>pom</type>
-		</dependency>
 
 		<dependency>
 			<groupId>${project.groupId}</groupId>
@@ -67,7 +86,7 @@
 			<groupId>${project.groupId}</groupId>
 			<artifactId>jangaroo-demos-lines-js</artifactId>
 			<version>${project.version}</version>
-			<type>war</type>
+			<type>jangaroo</type>
 		</dependency>
 
 	</dependencies>

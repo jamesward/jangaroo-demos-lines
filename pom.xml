@@ -9,6 +9,46 @@
 	<packaging>pom</packaging>
 	<name>jangaroo-demos-lines</name>
 
+	<repositories>
+
+		<repository>
+			<id>flex-mojos-repository</id>
+			<url>http://repository.sonatype.org/content/groups/flexgroup/</url>
+		</repository>
+
+		<repository>
+			<id>jangaroo</id>
+			<url>http://repo.jangaroo.net/maven2</url>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</repository>
+
+	</repositories>
+
+	<pluginRepositories>
+
+		<pluginRepository>
+			<id>flex-mojos-repository</id>
+			<url>http://repository.sonatype.org/content/groups/flexgroup/</url>
+		</pluginRepository>
+
+		<pluginRepository>
+			<id>jangaroo</id>
+			<name>Jangaroo repository</name>
+			<url>http://repo.jangaroo.net/maven2</url>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</pluginRepository>
+
+	</pluginRepositories>
+
+	<properties>
+		<jangaroo_version>0.7.8-SNAPSHOT</jangaroo_version>
+		<jangaroo_libs_version>0.7.9-SNAPSHOT</jangaroo_libs_version>
+	</properties>
+
 	<modules>
 		<module>swf</module>
 		<module>js</module>
