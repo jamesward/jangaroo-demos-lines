@@ -19,6 +19,12 @@
 		<repository>
 			<id>jangaroo</id>
 			<url>http://repo.jangaroo.net/maven2</url>
+		</repository>
+
+		<repository>
+			<id>jangaroo-snapshots</id>
+			<name>Jangaroo snapshot repository</name>
+			<url>http://repo.jangaroo.net/maven2-snapshots</url>
 			<snapshots>
 				<enabled>true</enabled>
 			</snapshots>
@@ -37,8 +43,15 @@
 			<id>jangaroo</id>
 			<name>Jangaroo repository</name>
 			<url>http://repo.jangaroo.net/maven2</url>
+		</pluginRepository>
+
+		<pluginRepository>
+			<id>jangaroo-snapshots</id>
+			<name>Jangaroo snapshot repository</name>
+			<url>http://repo.jangaroo.net/maven2-snapshots</url>
 			<snapshots>
 				<enabled>true</enabled>
+				<updatePolicy>never</updatePolicy>
 			</snapshots>
 		</pluginRepository>
 
