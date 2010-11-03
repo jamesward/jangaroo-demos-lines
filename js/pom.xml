@@ -1,0 +1,106 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>com.jamesward</groupId>
+		<artifactId>jangaroo-demos-lines</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+
+	<groupId>com.jamesward</groupId>
+	<artifactId>jangaroo-demos-lines-js</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>war</packaging>
+	<name>jangaroo-demos-lines-js</name>
+
+	<properties>
+		<jangaroo_version>0.7.7</jangaroo_version>
+		<jangaroo_libs_version>0.7.7</jangaroo_libs_version>
+	</properties>
+
+	<pluginRepositories>
+		<pluginRepository>
+			<id>jangaroo</id>
+			<name>Jangaroo repository</name>
+			<url>http://repo.jangaroo.net/maven2</url>
+		</pluginRepository>
+	</pluginRepositories>
+
+	<repositories>
+		<repository>
+			<id>jangaroo</id>
+			<url>http://repo.jangaroo.net/maven2</url>
+		</repository>
+	</repositories>
+
+	<build>
+		<sourceDirectory>../src/main/as3</sourceDirectory>
+		<outputDirectory>target/joo</outputDirectory>
+		
+		<plugins>
+
+			<plugin>
+				<groupId>net.jangaroo</groupId>
+				<artifactId>jangaroo-lifecycle</artifactId>
+				<version>${jangaroo_version}</version>
+				<extensions>true</extensions>
+			</plugin>
+
+			<plugin>
+				<groupId>net.jangaroo</groupId>
+				<artifactId>jangaroo-maven-plugin</artifactId>
+				<version>${jangaroo_version}</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>compile</goal>
+							<goal>war-package</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<verbose>true</verbose>
+					<sourceFiles>Lines.as</sourceFiles>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>2.1</version>
+				<configuration>
+					<failOnMissingWebXml>false</failOnMissingWebXml>
+				</configuration>
+			</plugin>
+
+		</plugins>
+	</build>
+
+	<dependencies>
+
+		<dependency>
+			<groupId>net.jangaroo</groupId>
+			<artifactId>jooflash</artifactId>
+			<version>${jangaroo_libs_version}</version>
+			<type>jangaroo</type>
+		</dependency>
+
+		<dependency>
+			<groupId>net.jangaroo</groupId>
+			<artifactId>jooflexframework</artifactId>
+			<version>${jangaroo_libs_version}</version>
+			<type>jangaroo</type>
+		</dependency>
+
+		<dependency>
+			<groupId>net.jangaroo</groupId>
+			<artifactId>jangaroo-browser</artifactId>
+			<version>${jangaroo_libs_version}</version>
+			<type>jangaroo</type>
+		</dependency>
+
+	</dependencies>
+
+</project>
